@@ -1,0 +1,532 @@
+@font-face {
+    font-family: SF Pro Display; /* Имя шрифта */
+    src: url(../fonts/SFProDisplay-Regular.ttf); /* Путь к файлу со шрифтом */
+   }
+
+* {
+    /* включить измерение элементов от рамки */
+    box-sizing: border-box;
+    /* убрать стандартные отступы */
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #F5F5F5;
+}
+.block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cards {
+    flex-wrap: wrap;
+}
+button img {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+/* ограничение по ширине и выставляет по середине */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+}
+.input {
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    width: 100%;
+    padding-left: 32px;
+}
+.input::placeholder {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #BFBFBF;
+}
+/* верхнее часть сайта (корзина, кнопки, инпут, логотип) */
+.header {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.adress-input {
+    max-width: 690px;
+    height: 40px;
+    background: url('../img/home.svg') no-repeat 10px center;    
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.button {
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+}
+.button--primary {
+    background: #1890FF;
+    color: #FFFFFF;
+}
+.button--secondary {
+    background: transparent;
+    border: 1px solid #D9D9D9;
+    margin-left: 8px;
+}
+/* секция промо */
+.section-promo {
+    margin-bottom: 56px;
+}
+.promo-block {
+    background: #FFF1B8 url('../img/promo.png') no-repeat right;
+    border-radius: 10px;
+    padding: 68px 71px;
+    filter: drop-shadow(0px 7px 12px rgba(158, 158, 163, 0.1));
+}
+.text-block {
+    max-width: 520px;
+    width: 100%;
+}
+.promo-title {
+    max-width: 438px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 39px;
+    line-height: 46px;
+    color: #302C34;
+    margin-bottom: 16px;
+}
+.promo-desc {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;    
+    color: #302C34;    
+}
+
+/* секция рестораны */
+.section-rest {
+    padding-bottom: 91px;
+}
+.section__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+}
+.section__header-title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;
+}
+.search-input {
+    max-width: 306px;
+    height: 34px;
+    background: url('../img/search.svg') no-repeat 10px center;
+}
+.card {
+    max-width: 384px;
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #fff;
+    border-radius: 7px;
+    text-decoration: none;
+    color: black;
+}
+#index .card {
+    cursor: pointer;
+}
+.card-img img {
+    width: 100%;
+}
+.card-main {
+    padding: 21px 24px 35px;
+    position: relative;
+}
+.card-main__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.cart-title {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 32px;
+}
+.time-write {
+    background: #262626;
+    border-radius: 2px;
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    color: #FFFFFF;
+    padding: 5px 8px;
+}
+.reiting {
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 32px;
+    color: #FFC107;
+    margin-left: 22px;
+    margin-right: 26px;
+}
+.reiting::before {
+    content: '';
+    width: 15px;
+    height: 14px;
+    background: url('../img/star.svg');
+    position: absolute;
+    top: 1px;
+    left: -22px;
+}
+.midprice {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: #8C8C8C;
+    margin-right: 25px;
+}
+.dish {
+    position: relative;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 32px;
+    color: #8C8C8C;
+}
+.dish::before {
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: url('../img/Ellipse.svg');
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    margin-top: -3px;
+}
+/* footer секция */
+.footer {
+    background-color: #fff;
+    padding: 60px 0;
+}
+.footer-block {
+    max-width: 556px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navigation {
+    max-width: 420px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-link {
+    font-size: 18px;
+    line-height: 21px;
+    color: #595959;
+    text-decoration: none;
+}
+.social-block {
+    max-width: 127px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* страница ресторана */
+.restourant__header {
+    max-width: 442px;
+    width: 100%;
+}
+.product-header {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.desc {
+    font-size: 18px;
+    line-height: 21px;
+    color: #8C8C8C;
+    margin-top: 10px;
+}
+.product-desc {
+    max-width: 210px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+}
+.product-price {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;  
+    color: #000000;
+}
+
+/* модальное окно */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+.modal-window {
+    max-width: 780px;
+    width: 100%;
+    background: #fff;
+    padding: 41px 46px;
+    display: flex;
+    flex-direction: column;
+}
+.modal-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 48px;
+}
+.modal-title {
+    font-size: 36px;
+    line-height: 42px;
+    color: #000000;    
+}
+.btn-close {
+    width: 25px;
+    height: 25px;
+    background: url('../img/close.svg') no-repeat center / cover;
+    border: none;
+    cursor: pointer;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #D9D9D9;
+}
+.row-rigth {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 216px;
+    width: 100%;
+}
+.product-name {
+    font-size: 18px;
+    line-height: 32px;
+}
+.price-product {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+}
+.btn-count {
+    font-family: SF Pro Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #40A9FF;
+    width: 40px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    border: 1px solid #40A9FF;
+    border-radius: 2px;
+}
+.count {
+    margin-right: 13px;
+    margin-left: 13px;
+    font-size: 16px;
+    line-height: 24px;
+}
+.modal-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 53px;
+}
+.sum {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #262626;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+}
+.rub-sum {
+    margin-left: 5px;
+}
+.modal--close {
+    display: none;
+}
+.not--active {
+    display: none;
+}
+
+/* адаптация на разные экраны */
+
+@media (max-width: 1250px) {
+    .container {
+        width: 95%;
+    }
+    .block {
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 1110px) {
+    .logo-link {
+        display: none;
+    }
+    .footer {
+        padding: 20px;
+    }
+    .section__header {
+        max-width: 89%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+    }
+    .section-rest {
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 980px) {
+    .logo-link {
+        display: block;
+        order: 1;
+    }
+    .buttons__header {
+        display: none;
+    }
+    .promo-block {
+        background: #FFF1B8;
+        display: flex;
+        justify-content: center;
+    }
+}
+@media (max-width: 860px) {
+    .header__block {
+        justify-content: center;
+    }
+    .logo-link {
+        display: none;
+    }
+    .adress-input {
+        max-width: 1000px;
+        width: 100%;
+    }
+    .card {
+        max-width: 300px;
+    }
+
+}
+@media (max-width: 660px) {
+    .header {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .header__block {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .logo-link {
+        display: block;
+        order: 0;
+    }
+    .buttons__header {
+        display: flex;
+    }
+    .adress-input {
+        order: -1;
+        margin-bottom: 20px;
+    }
+    .promo-desc {
+        display: none;
+    }
+    .card {
+        max-width: 400px;
+    }
+    .section-promo {
+        display: none;
+    }
+    .section__header {
+        justify-content: center;
+    }
+    .section__header-title {
+        display: none;
+    }
+    .search-input {
+        max-width: 100%;
+    }
+
+
+    .footer__blocks {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-block {
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    .footer-logo {
+        display: none;
+    }
+}
+@media (max-width: 480px) {
+    .header {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .navigation {
+        display: none;
+    }
+    .cards :last-child {
+        margin-bottom: 0;
+    }
+}
